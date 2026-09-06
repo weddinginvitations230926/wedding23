@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mirjamol &amp; Sipora — приглашение на свадьбу, 23 сентября 2026</title>
+<meta name="description" content="23 сентября 2026 года, Самарканд, ресторан «AMIR». Сбор гостей в 18:00. Пожалуйста, подтвердите присутствие.">
+<meta name="theme-color" content="#F6F8F0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%23F6F8F0'/%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%239CAB74' stroke-width='3'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia,serif' font-size='42' fill='%236E7D4C'%3EMS%3C/text%3E%3C/svg%3E">
+
+<!-- ЗАМЕНИТЕ ЛОГИН на свой логин на GitHub (в трёх строках ниже).
+     Если репозиторий назван не wedding — поправьте и это.
+     Адрес нужен только для картинки-превью в WhatsApp и Telegram;
+     сам сайт работает и без правки. -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ЛОГИН.github.io/wedding/">
+<meta property="og:title" content="Mirjamol &amp; Sipora — приглашение на свадьбу">
+<meta property="og:description" content="23 сентября 2026, Самарканд, ресторан «AMIR». Сбор гостей в 18:00.">
+<meta property="og:image" content="https://ЛОГИН.github.io/wedding/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Marcellus&family=Tangerine:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     КАК РЕДАКТИРОВАТЬ
+     1. Имена — id="name1" / id="name2" в HTML и в <script> (массивы букв)
+     2. Дата / место — .place в HTML, а также weddingDate в <script>
+     3. Цвет каждой секции — в HTML у каждого <section class="band ...">
+        свой набор --bg1/--gold/--ink и т.д. прямо в style="" — меняйте там
+     4. Календарь — сетка чисел уже посчитана для сентября 2026
+     5. Место — секция id="band-venue": ресторан AMIR, Самарканд, ул. Лутфий 124.
+        Фото зала вшито в <figure class="venue-photo">, время — в <dl class="venue-plan">,
+        ссылки на карты — в двух <a class="venue-map">
+     6. Куда приходят ответы — <script>, объект CONTACT (WhatsApp / Telegram)
+     ============================================================ */
+  :root{
+    --bg1:#F4F6F0; --bg2:#E3E9D6;
+    --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C;
+    --blush:#C2A0A0;
+    --ink:#3F4536; --ink-soft:#818C74;
+    --glass:rgba(255,255,255,0.65); --glass-line:rgba(201,143,132,0.35);
+    --surface:rgba(0,0,0,0.03);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; color:var(--ink); font-family:'Inter', sans-serif; font-weight:300;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden; background:#FBF1EE;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important;}
+  }
+
+  /* ---------- ЦВЕТНЫЕ СЕКЦИИ ---------- */
+  .band{
+    position:relative; overflow:hidden;
+    background:linear-gradient(165deg, var(--bg1), var(--bg2));
+    color:var(--ink);
+    padding:86px 24px 78px;
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+  }
+  .band.hero-band{ min-height:100svh; justify-content:flex-start; padding-top:90px; }
+  .hero-illustration{
+    position:absolute; bottom:0; left:50%; transform:translateX(-46%);
+    width:88%; max-width:360px; opacity:.92; pointer-events:none; z-index:0;
+  }
+  .hero-text{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; }
+
+  /* ---------- СЕКЦИЯ-ОБЛОЖКА: МОНОГРАММА С ЦВЕТАМИ ---------- */
+  .cover-wrap{ position:relative; width:min(92vw,380px); height:min(92vw,420px); margin:0 auto; }
+  .cover-ring{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:74%; aspect-ratio:1/1; border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(255,255,255,0.35);
+    z-index:2;
+  }
+  .cover-ring::before{
+    content:""; position:absolute; inset:9px; border:1px solid var(--gold-soft); border-radius:50%;
+  }
+  .cover-mono{
+    font-family:'Playfair Display', serif; font-weight:600; font-style:normal;
+    font-size:clamp(52px,15vw,72px); line-height:1.05; color:var(--gold-deep);
+    letter-spacing:.01em; position:relative; z-index:1;
+  }
+  .cover-mono .amp{
+    display:inline-block; font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:400;
+    font-size:.55em; color:#B98B3E; padding:0 .08em; vertical-align:middle;
+  }
+  .cover-flower{ position:absolute; pointer-events:none; z-index:3; opacity:0; animation:flowerFade 1.3s ease 1.3s forwards; }
+  .cover-flower.f-top{ width:60%; top:-8%; left:50%; transform:translateX(-50%) rotate(-3deg); }
+  .cover-flower.f-left{ width:52%; bottom:0%; left:-16%; transform:rotate(6deg); }
+  .cover-flower.f-right{ width:48%; bottom:-4%; right:-16%; transform:scaleX(-1) rotate(-4deg); }
+  .cover-sub{
+    margin-top:34px; font-size:13px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--ink-soft); opacity:0; animation:fadeUp .9s ease .3s forwards;
+  }
+  .band:not(.active-band) *{ animation-play-state:paused !important; }
+
+  .band-sketch{ position:absolute; width:130px; height:150px; opacity:.5; pointer-events:none; color:var(--gold); }
+  .band-sketch.tl{ top:18px; left:-14px; }
+  .band-sketch.tr{ top:18px; right:-14px; transform:scaleX(-1); }
+  .band-sketch.bl{ bottom:18px; left:-14px; transform:scaleY(-1); }
+  .band-sketch.br{ bottom:18px; right:-14px; transform:scale(-1,-1); }
+  .corner-flower{ position:absolute; top:0; width:52%; max-width:300px; z-index:4; pointer-events:none; opacity:0; animation:flowerFade 1.3s ease forwards; }
+  .corner-flower-tl{ left:0; animation-delay:.25s; }
+  .corner-flower-tr{ right:0; transform:scaleX(-1); animation-delay:.5s; }
+  .corner-flower-bl{ top:auto; bottom:0; left:0; transform:scaleY(-1); animation-delay:.75s; }
+  .corner-flower-br{ top:auto; bottom:0; right:0; transform:scale(-1,-1); animation-delay:1s; }
+  @keyframes flowerFade{ from{ opacity:0; } to{ opacity:.97; } }
+
+  /* ---------- FLOATING ORBS (общий лёгкий слой поверх всех секций) ---------- */
+  /* z-index:2 — секции идут в потоке ниже по DOM и раньше полностью перекрывали этот слой */
+  .orbs{ position:fixed; inset:0; overflow:hidden; z-index:2; pointer-events:none; }
+  .orb{ position:absolute; border-radius:50%; filter:blur(24px); will-change:transform; }
+  .o1{ width:200px; height:200px; left:-60px; top:8%; background:radial-gradient(circle, #E8C9A0, transparent 70%); opacity:.14; animation:float1 14s ease-in-out infinite; }
+  .o2{ width:220px; height:220px; right:-80px; top:32%; background:radial-gradient(circle, #FFFFFF, transparent 70%); opacity:.22; animation:float2 17s ease-in-out infinite; }
+  .o3{ width:160px; height:160px; left:10%; bottom:14%; background:radial-gradient(circle, #FFFFFF, transparent 70%); opacity:.18; animation:float3 13s ease-in-out infinite; }
+  @keyframes float1{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(30px,40px) scale(1.15); } }
+  @keyframes float2{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(-40px,-25px) scale(1.1); } }
+  @keyframes float3{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(20px,-35px) scale(1.2); } }
+
+  /* ---------- HERO / NAMES ---------- */
+  .eyebrow{
+    font-size:12.5px; letter-spacing:.4em; text-transform:uppercase; color:var(--gold-soft);
+    margin:0 0 26px; opacity:0; animation:fadeUp .9s ease .1s forwards;
+  }
+  .names{ font-family:'Playfair Display', serif; font-weight:600; font-size:clamp(44px,12.5vw,64px); line-height:1.05; margin:0; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.25em; }
+  .names .letter, .cover-mono .letter{
+    display:inline-block; opacity:0; transform:translateY(34px) rotate(4deg);
+    animation:letterIn .9s cubic-bezier(.2,.8,.2,1) forwards, foilShine 5.5s linear 1.2s infinite;
+    background:linear-gradient(100deg, var(--gold-deep) 0%, var(--gold) 18%, #FBEAE6 32%, var(--gold-soft) 46%, var(--gold-deep) 64%, var(--gold) 80%, #FBEAE6 100%);
+    background-size:280% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 0 26px rgba(201,143,132,.25);
+  }
+  @keyframes letterIn{ to{ opacity:1; transform:translateY(0) rotate(0); } }
+  @keyframes foilShine{ from{ background-position:0% 0; } to{ background-position:280% 0; } }
+  .amp{ font-style:italic; font-weight:400; color:var(--blush); opacity:0; animation:fadeUp .8s ease .9s forwards; padding:0 .05em; }
+  .crest{ opacity:0; animation:fadeUp .9s ease 0s forwards; margin-bottom:18px; }
+  .crest svg{ width:92px; height:92px; }
+  .glow-line{ width:64px; height:1px; margin:22px auto 0; background:linear-gradient(90deg, transparent, var(--gold), transparent); opacity:0; animation:fadeUp .9s ease 1.1s forwards, shimmer 3.5s ease-in-out 2s infinite; }
+  @keyframes shimmer{ 0%,100%{ opacity:.5; width:64px; } 50%{ opacity:1; width:96px; } }
+  .place{ margin:18px 0 0; font-size:14.5px; letter-spacing:.1em; color:var(--ink-soft); opacity:0; animation:fadeUp .9s ease 1.25s forwards; text-transform:uppercase; }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:translateY(0); } }
+  .scroll-hint{ margin-top:34px; width:1px; height:40px; background:linear-gradient(var(--gold), transparent); opacity:.5; }
+
+  /* ---------- GLASS CARD BASE ---------- */
+  .glass{
+    background:var(--glass); border:1px solid var(--glass-line);
+    border-radius:4px; box-shadow:0 24px 55px -30px rgba(0,0,0,.5), 0 0 0 1px rgba(0,0,0,.04);
+    animation:breathe 6s ease-in-out infinite;
+    position:relative;
+  }
+  .glass::before{
+    content:""; position:absolute; inset:6px; border:1px solid var(--glass-line); pointer-events:none; border-radius:2px;
+  }
+  @keyframes breathe{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-4px); } }
+
+  /* ---------- CALENDAR ---------- */
+  .calendar-card{ width:100%; max-width:340px; margin:0 auto; padding:26px 22px 24px; }
+  .cal-month{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:19px; color:var(--gold-soft); margin:0 0 16px; }
+  .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px 0; }
+  .cal-dow{ font-size:10.5px; letter-spacing:.05em; color:var(--ink-soft); opacity:.7; padding-bottom:6px; }
+  .cal-day{ position:relative; height:34px; display:flex; align-items:center; justify-content:center; font-size:14px; color:var(--ink); }
+  .cal-day.empty{ visibility:hidden; }
+  .cal-day.highlight{ color:#170D06; font-weight:600; }
+  .cal-day.highlight::after{
+    content:""; position:absolute; inset:-3px; border-radius:50%;
+    background:conic-gradient(from 0deg, var(--gold), transparent 25%, transparent 75%, var(--gold));
+    -webkit-mask:radial-gradient(circle, transparent 62%, #fff 64%, #fff 74%, transparent 76%);
+    mask:radial-gradient(circle, transparent 62%, #fff 64%, #fff 74%, transparent 76%);
+    animation:bezelSpin 6s linear infinite;
+    z-index:0;
+  }
+  .cal-day.highlight::before{
+    content:""; position:absolute; inset:2px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--gold-soft), var(--gold) 55%, var(--gold-deep) 100%);
+    animation:pulseRing 2.4s ease-out infinite;
+    z-index:1;
+  }
+  .cal-day.highlight span{ position:relative; z-index:2; }
+  @keyframes bezelSpin{ to{ transform:rotate(360deg); } }
+  @keyframes pulseRing{
+    0%{ box-shadow:0 0 0 0 rgba(0,0,0,.18); }
+    70%{ box-shadow:0 0 0 10px rgba(0,0,0,0); }
+    100%{ box-shadow:0 0 0 0 rgba(0,0,0,0); }
+  }
+  .cal-caption{ margin:16px 0 0; font-size:12.5px; letter-spacing:.05em; color:var(--ink-soft); }
+
+  /* ---------- COUNTDOWN ---------- */
+  .countdown-card{ width:100%; max-width:360px; margin:28px auto 0; padding:26px 18px; }
+  .cd-label{ margin:0 0 16px; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); }
+  .cd-grid{ display:flex; justify-content:center; gap:10px; }
+  .cd-unit{ display:flex; flex-direction:column; align-items:center; width:64px; }
+  .cd-box{ width:100%; padding:10px 0; border-radius:12px; background:var(--surface); border:1px solid var(--glass-line); }
+  .cd-num{ font-family:'Cormorant Garamond', serif; font-weight:600; font-size:28px; line-height:1; color:var(--gold-soft); font-variant-numeric:tabular-nums; display:inline-block; }
+  .cd-num.pulse{ animation:pop .4s ease; }
+  @keyframes pop{ 0%{ transform:scale(1); } 40%{ transform:scale(1.28); } 100%{ transform:scale(1); } }
+  .cd-unit-label{ margin-top:8px; font-size:10px; letter-spacing:.06em; color:var(--ink-soft); }
+
+  /* ---------- RSVP ---------- */
+  .rsvp-card{ width:100%; max-width:360px; margin:0 auto; padding:32px 24px; }
+  .rsvp-title{ font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:26px; margin:0 0 8px; color:var(--ink); }
+  .rsvp-sub{ font-size:14px; color:var(--ink-soft); margin:0 0 22px; line-height:1.6; }
+  .rsvp-field{ text-align:left; margin-bottom:14px; }
+  .rsvp-label{ display:block; font-size:12px; letter-spacing:.04em; color:var(--ink-soft); margin:0 0 7px; }
+  .rsvp-input, .rsvp-note{
+    width:100%; border:1px solid var(--glass-line); background:var(--surface);
+    padding:13px 14px; font-family:'Inter', sans-serif; font-size:16px; color:var(--ink); border-radius:12px;
+    display:block;
+  }
+  .rsvp-note{ resize:vertical; min-height:74px; line-height:1.5; }
+  .rsvp-input::placeholder, .rsvp-note::placeholder{ color:var(--ink-soft); opacity:.7; }
+  .rsvp-input:focus, .rsvp-note:focus{ outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(156,171,116,.22); }
+  .rsvp-input.invalid{ border-color:var(--blush); }
+  .rsvp-toggle{ display:flex; gap:10px; margin-bottom:16px; }
+  .rsvp-toggle button{
+    flex:1; padding:13px 0; border-radius:12px; border:1px solid var(--glass-line);
+    background:var(--surface); color:var(--ink); font-family:'Inter', sans-serif; font-size:14.5px;
+    cursor:pointer; transition:background .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .rsvp-toggle button.active[data-value="yes"]{ background:linear-gradient(135deg, var(--gold-soft), var(--gold)); color:#170D06; border-color:var(--gold); font-weight:500; }
+  /* на тёмном фоне прежний тёмно-бордовый текст был нечитаем */
+  .rsvp-toggle button.active[data-value="no"]{ background:rgba(194,160,160,.22); border-color:var(--blush); color:#F1DCDC; font-weight:500; }
+
+  /* счётчик гостей */
+  .rsvp-count{ display:flex; align-items:center; justify-content:space-between; gap:12px;
+    border:1px solid var(--glass-line); background:var(--surface); border-radius:12px; padding:8px 10px; }
+  .rsvp-count button{
+    width:38px; height:38px; flex:none; border-radius:10px; border:1px solid var(--glass-line);
+    background:transparent; color:var(--ink); font-size:20px; line-height:1; cursor:pointer;
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .rsvp-count button:hover:not(:disabled){ border-color:var(--gold); }
+  .rsvp-count button:disabled{ opacity:.35; cursor:default; }
+  .rsvp-count-value{ font-family:'Cormorant Garamond', serif; font-size:20px; font-weight:600; color:var(--ink); }
+  .rsvp-guests[hidden]{ display:none; }
+
+  .rsvp-submit{
+    position:relative; overflow:hidden;
+    display:block; width:100%; padding:15px 0; border:none; border-radius:12px; margin-top:4px;
+    background:linear-gradient(135deg, var(--gold-soft), var(--gold)); color:#170D06;
+    font-family:'Inter', sans-serif; font-size:14.5px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; cursor:pointer;
+    transition:filter .2s ease;
+  }
+  .rsvp-submit::after{
+    content:""; position:absolute; top:0; left:0; width:40%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+    transform:skewX(-20deg) translateX(-250%); animation:btnShine 3.2s ease-in-out infinite;
+    will-change:transform;
+  }
+  @keyframes btnShine{ 0%{ transform:skewX(-20deg) translateX(-250%); } 40%{ transform:skewX(-20deg) translateX(350%); } 100%{ transform:skewX(-20deg) translateX(350%); } }
+  .rsvp-submit:hover{ filter:brightness(1.08); }
+  .rsvp-alts{ display:flex; gap:10px; }
+  .rsvp-alt{
+    display:block; flex:1; margin-top:10px; padding:13px 0; border-radius:12px; text-align:center;
+    border:1px solid var(--glass-line); background:transparent; color:var(--ink-soft);
+    font-family:'Inter', sans-serif; font-size:13.5px; cursor:pointer; text-decoration:none;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .rsvp-alt:hover{ border-color:var(--gold); color:var(--ink); }
+  .rsvp-hint{ margin:10px 0 0; font-size:12px; line-height:1.5; color:var(--ink-soft); opacity:.8; }
+  .rsvp-error{ display:none; margin:12px 0 0; font-size:13px; color:var(--blush); }
+  .rsvp-thanks{ display:none; margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:17px; color:var(--gold-soft); line-height:1.5; }
+  .rsvp-card.sent .rsvp-form{ display:none; }
+
+  /* видимый фокус с клавиатуры по всей странице */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--gold); outline-offset:3px;
+  }
+
+  /* ---------- МЕСТО ---------- */
+  .venue-card{ width:100%; max-width:360px; margin:0 auto; padding:30px 24px; }
+  .venue-name{ font-family:'Playfair Display', serif; font-weight:600; font-size:25px; line-height:1.25; margin:0; color:var(--ink); }
+  .venue-address{ margin:10px 0 0; font-size:14.5px; line-height:1.6; color:var(--ink-soft); }
+  .venue-hint{ margin:8px 0 0; font-size:13px; color:var(--ink-soft); opacity:.85; }
+  .venue-rule{ width:44px; height:1px; margin:20px auto; background:var(--gold-soft); opacity:.6; }
+  .venue-plan{ margin:0; text-align:left; }
+  .venue-plan div{ display:flex; gap:14px; align-items:baseline; padding:7px 0; }
+  .venue-plan dt{ font-family:'Cormorant Garamond', serif; font-size:18px; font-weight:600; color:var(--gold-deep); width:58px; flex:none; }
+  .venue-plan dd{ margin:0; font-size:14px; color:var(--ink); }
+  .venue-map{
+    display:block; margin-top:22px; padding:14px 0; border-radius:12px;
+    border:1px solid var(--gold); background:transparent; color:var(--gold-deep);
+    font-family:'Inter', sans-serif; font-size:14px; letter-spacing:.06em; text-decoration:none;
+    transition:background .2s ease, color .2s ease;
+  }
+  .venue-map:hover{ background:var(--gold); color:#F7F9F1; }
+  .venue-map.secondary{ margin-top:10px; border-color:var(--glass-line); color:var(--ink-soft); }
+  .venue-map.secondary:hover{ background:transparent; border-color:var(--gold); color:var(--gold-deep); }
+  .venue-photo{
+    margin:0 0 22px; border-radius:16px; overflow:hidden; border:1px solid var(--glass-line);
+    box-shadow:0 18px 34px -22px rgba(0,0,0,.35); line-height:0;
+  }
+  .venue-photo img{ width:100%; height:auto; display:block; }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .9s ease, transform .9s ease; }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+
+  /* ---------- ФОТОСЕССИЯ ---------- */
+  .photo-page{ width:100%; display:flex; flex-direction:column; align-items:center; }
+  .hero-photo{
+    position:relative; width:100%; max-width:340px; aspect-ratio:3/4; border-radius:22px;
+    overflow:hidden; border:1px solid var(--glass-line);
+    background:linear-gradient(150deg, var(--bg1), var(--bg2));
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.4);
+    animation:breathe 7s ease-in-out infinite;
+  }
+  .hero-photo::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 30% 20%, rgba(255,255,255,.15), transparent 55%); }
+  .hero-photo span{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 30px; font-size:13.5px; color:var(--ink-soft); font-style:italic; }
+  .photo-strip{ display:grid; grid-template-columns:1fr 1fr; gap:14px; width:100%; max-width:340px; margin-top:14px; }
+  .strip-photo{
+    position:relative; aspect-ratio:1/1.05; border-radius:16px; overflow:hidden;
+    border:1px solid var(--glass-line); background:linear-gradient(150deg, var(--bg1), var(--bg2));
+    box-shadow:0 18px 34px -22px rgba(0,0,0,.35);
+  }
+  .strip-photo span{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 10px; font-size:11.5px; color:var(--ink-soft); font-style:italic; }
+  .photo-caption{ margin:22px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:17px; color:var(--ink-soft); text-align:center; }
+
+  /* ---------- ДЕТСКИЕ ФОТО ---------- */
+  .childhood-card{ width:100%; max-width:360px; margin:0 auto; padding:30px 24px; text-align:center; }
+  .childhood-card .hearts{ font-size:16px; color:var(--blush); letter-spacing:8px; margin:6px 0 18px; }
+  .child-photos{ display:flex; gap:14px; justify-content:center; }
+  .child-photo{
+    position:relative; width:130px; aspect-ratio:1/1; border-radius:16px; overflow:hidden;
+    border:1px solid var(--glass-line); background:linear-gradient(150deg, var(--bg1), var(--bg2));
+  }
+  .child-photo:nth-child(1){ transform:rotate(-3deg); }
+  .child-photo:nth-child(2){ transform:rotate(3deg); }
+  .child-photo span{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 8px; font-size:11px; color:var(--ink-soft); font-style:italic; }
+
+  footer{ margin-top:6px; font-size:11.5px; letter-spacing:.08em; color:var(--ink-soft); opacity:.8; }
+</style>
+</head>
+<body>
+
+  <!-- переиспользуемый эскиз веточки для углов секций -->
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="sketch" viewBox="0 0 130 150">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path d="M14 6 C 30 34 22 62 42 84 C 54 98 70 92 78 76"/>
+        <circle cx="78" cy="74" r="8"/>
+        <path d="M78 66 C 84 58 96 56 104 62 C 98 68 88 70 78 66 Z"/>
+        <path d="M70 60 C 62 50 50 50 42 58 C 50 64 62 66 70 60 Z"/>
+        <path d="M22 30 C 14 26 4 28 0 36 C 8 40 18 38 22 30 Z"/>
+        <path d="M32 58 C 24 54 14 58 12 66 C 20 70 30 66 32 58 Z"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <div class="orbs">
+    <span class="orb o1"></span>
+    <span class="orb o2"></span>
+    <span class="orb o3"></span>
+  </div>
+
+  <!-- СЕКЦИЯ 0 — ОБЛОЖКА С МОНОГРАММОЙ -->
+  <section class="band hero-band active-band" id="band-cover"
+    style="--bg1:#F6F8F0; --bg2:#E9EEDC; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    <img class="corner-flower corner-flower-tl" alt="" src="img/corner-flower.webp" width="620" height="425">
+    <img class="corner-flower corner-flower-tr" alt="" src="img/corner-flower.webp" width="620" height="425">
+    <img class="corner-flower corner-flower-bl" alt="" src="img/corner-flower.webp" width="620" height="425">
+    <img class="corner-flower corner-flower-br" alt="" src="img/corner-flower.webp" width="620" height="425">
+
+    <div class="cover-wrap">
+      <img class="cover-flower f-top" alt="" src="img/cover-flower.webp" width="460" height="439">
+      <div class="cover-ring">
+        <div class="cover-mono"><span class="letter" style="animation-delay:.2s, 1.5s;">M</span><span class="amp">&amp;</span><span class="letter" style="animation-delay:.65s, 1.95s;">S</span></div>
+      </div>
+    </div>
+    <p class="cover-sub">приглашение на свадьбу</p>
+  </section>
+
+  <!-- СЕКЦИЯ 1 — ИМЕНА (блаш) -->
+  <section class="band hero-band" id="band0"
+    style="--bg1:#FBFCF7; --bg2:#F0F3E6; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    <svg class="band-sketch tl"><use href="#sketch"/></svg>
+    <svg class="band-sketch tr"><use href="#sketch"/></svg>
+
+    <img class="hero-illustration" alt="" src="img/couple.webp" width="498" height="588">
+
+    <div class="hero-text">
+      <div class="crest">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="46" stroke="#9CAB74" stroke-width="1"/>
+          <circle cx="50" cy="50" r="39" stroke="#9CAB74" stroke-width=".6" opacity=".55"/>
+          <path d="M13 50c9-15 20-21 28-15M87 50c-9-15-20-21-28-15" stroke="#9CAB74" stroke-width="1" opacity=".8"/>
+          <path d="M50 8 L53 15 L50 12 L47 15 Z" fill="#9CAB74" opacity=".8"/>
+          <path d="M50 92 L53 85 L50 88 L47 85 Z" fill="#9CAB74" opacity=".8"/>
+          <text x="50" y="58" text-anchor="middle" font-family="Playfair Display, serif" font-size="25" fill="#C3D19E">M S</text>
+        </svg>
+      </div>
+      <p class="eyebrow">мы женимся</p>
+      <h1 class="names" id="namesRow">
+        <span class="word" id="name1"></span><span class="amp">&amp;</span><span class="word" id="name2"></span>
+      </h1>
+      <div class="glow-line"></div>
+      <p class="place">23 сентября 2026 · Самарканд</p>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 2 — ФОТОСЕССИЯ (шалфей) -->
+  <section class="band" id="band1"
+    style="--bg1:#F4F6F0; --bg2:#E3E9D6; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    <svg class="band-sketch tl"><use href="#sketch"/></svg>
+    <svg class="band-sketch br"><use href="#sketch"/></svg>
+    <section class="photo-page reveal">
+      <p class="eyebrow">наша фотосессия</p>
+      <div class="hero-photo">
+        <span>место для главного фото с фотосессии (портрет 3:4)</span>
+      </div>
+      <div class="photo-strip">
+        <div class="strip-photo"><span>фото 2</span></div>
+        <div class="strip-photo"><span>фото 3</span></div>
+      </div>
+      <p class="photo-caption">Несколько кадров, снятых незадолго до свадьбы</p>
+    </section>
+  </section>
+
+  <!-- СЕКЦИЯ 3 — КАЛЕНДАРЬ + ТАЙМЕР (шампань) -->
+  <section class="band" id="band2"
+    style="--bg1:#232B1C; --bg2:#141A0F; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#EDF1E2; --ink-soft:#A9B598; --glass:rgba(255,255,255,0.06); --glass-line:rgba(156,171,116,0.35); --surface:rgba(255,255,255,0.05);">
+    <svg class="band-sketch tr"><use href="#sketch"/></svg>
+    <svg class="band-sketch bl"><use href="#sketch"/></svg>
+    <p class="eyebrow">когда</p>
+    <div class="glass calendar-card reveal">
+      <p class="cal-month">Сентябрь 2026</p>
+      <div class="cal-grid">
+        <span class="cal-dow">ПН</span><span class="cal-dow">ВТ</span><span class="cal-dow">СР</span>
+        <span class="cal-dow">ЧТ</span><span class="cal-dow">ПТ</span><span class="cal-dow">СБ</span><span class="cal-dow">ВС</span>
+
+        <span class="cal-day empty"></span><span class="cal-day"><span>1</span></span><span class="cal-day"><span>2</span></span>
+        <span class="cal-day"><span>3</span></span><span class="cal-day"><span>4</span></span><span class="cal-day"><span>5</span></span><span class="cal-day"><span>6</span></span>
+
+        <span class="cal-day"><span>7</span></span><span class="cal-day"><span>8</span></span><span class="cal-day"><span>9</span></span>
+        <span class="cal-day"><span>10</span></span><span class="cal-day"><span>11</span></span><span class="cal-day"><span>12</span></span><span class="cal-day"><span>13</span></span>
+
+        <span class="cal-day"><span>14</span></span><span class="cal-day"><span>15</span></span><span class="cal-day"><span>16</span></span>
+        <span class="cal-day"><span>17</span></span><span class="cal-day"><span>18</span></span><span class="cal-day"><span>19</span></span><span class="cal-day"><span>20</span></span>
+
+        <span class="cal-day"><span>21</span></span><span class="cal-day"><span>22</span></span><span class="cal-day highlight"><span>23</span></span>
+        <span class="cal-day"><span>24</span></span><span class="cal-day"><span>25</span></span><span class="cal-day"><span>26</span></span><span class="cal-day"><span>27</span></span>
+
+        <span class="cal-day"><span>28</span></span><span class="cal-day"><span>29</span></span><span class="cal-day"><span>30</span></span>
+        <span class="cal-day empty"></span><span class="cal-day empty"></span><span class="cal-day empty"></span><span class="cal-day empty"></span>
+      </div>
+      <p class="cal-caption">среда · сбор гостей в 18:00</p>
+    </div>
+
+    <div class="glass countdown-card reveal">
+      <p class="cd-label">до свадьбы осталось</p>
+      <div class="cd-grid" id="countdown">
+        <div class="cd-unit"><div class="cd-box"><span class="cd-num" id="cd-days">00</span></div><span class="cd-unit-label">дней</span></div>
+        <div class="cd-unit"><div class="cd-box"><span class="cd-num" id="cd-hours">00</span></div><span class="cd-unit-label">часов</span></div>
+        <div class="cd-unit"><div class="cd-box"><span class="cd-num" id="cd-minutes">00</span></div><span class="cd-unit-label">минут</span></div>
+        <div class="cd-unit"><div class="cd-box"><span class="cd-num" id="cd-seconds">00</span></div><span class="cd-unit-label">секунд</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 3.5 — МЕСТО -->
+  <section class="band" id="band-venue"
+    style="--bg1:#FBFCF7; --bg2:#EDF1E2; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    <svg class="band-sketch tl"><use href="#sketch"/></svg>
+    <svg class="band-sketch br"><use href="#sketch"/></svg>
+    <p class="eyebrow">где</p>
+    <div class="glass venue-card reveal">
+      <figure class="venue-photo">
+        <img loading="lazy" decoding="async" src="img/venue-amir.webp" width="500" height="375" alt="Ресторан AMIR в Самарканде">
+      </figure>
+      <h2 class="venue-name">Ресторан «AMIR»</h2>
+      <p class="venue-address">Самарканд, улица Лутфий, 124</p>
+
+      <div class="venue-rule"></div>
+
+      <dl class="venue-plan">
+        <div><dt>18:00</dt><dd>Сбор гостей</dd></div>
+        <div><dt>18:30</dt><dd>Начало торжества</dd></div>
+        <div><dt>23:00</dt><dd>Завершение вечера</dd></div>
+      </dl>
+
+      <a class="venue-map" href="https://yandex.uz/maps/?text=%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9B%D1%83%D1%82%D1%84%D0%B8%D0%B9%20124%2C%20%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%20AMIR" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+      <a class="venue-map secondary" href="https://www.google.com/maps/search/?api=1&query=%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9B%D1%83%D1%82%D1%84%D0%B8%D0%B9%20124%2C%20%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%20AMIR" target="_blank" rel="noopener">Google Карты</a>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 4 — ДЕТСКИЕ ФОТО (лаванда) -->
+  <section class="band" id="band3"
+    style="--bg1:#F6F8EE; --bg2:#DCE4C4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    <svg class="band-sketch tl"><use href="#sketch"/></svg>
+    <svg class="band-sketch br"><use href="#sketch"/></svg>
+    <p class="eyebrow">до того, как всё началось</p>
+    <div class="glass childhood-card reveal">
+      <p class="cal-month" style="margin-bottom:2px;">Узнали этих малышей?</p>
+      <p style="font-size:13.5px; color:var(--ink-soft); margin:0 0 4px;">Да-да… они выросли и теперь женятся</p>
+      <div class="hearts">♡ ♡</div>
+      <div class="child-photos">
+        <div class="child-photo"><span>детское фото — он</span></div>
+        <div class="child-photo"><span>детское фото — она</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 5 — RSVP (терракота) -->
+  <section class="band" id="band4"
+    style="--bg1:#161C10; --bg2:#0A0D07; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#EDF1E2; --ink-soft:#A9B598; --glass:rgba(255,255,255,0.05); --glass-line:rgba(156,171,116,0.35); --surface:rgba(255,255,255,0.05);">
+    <svg class="band-sketch tr"><use href="#sketch"/></svg>
+    <svg class="band-sketch bl"><use href="#sketch"/></svg>
+    <p class="eyebrow">ваш ответ</p>
+    <div class="glass rsvp-card reveal" id="rsvpCard">
+      <h2 class="rsvp-title">Вы будете с нами?</h2>
+      <p class="rsvp-sub">Пожалуйста, ответьте до 1 сентября — нам нужно рассадить гостей</p>
+
+      <div class="rsvp-form" id="rsvpForm">
+        <div class="rsvp-field">
+          <label class="rsvp-label" for="rsvpName">Ваше имя и фамилия</label>
+          <input type="text" id="rsvpName" class="rsvp-input" autocomplete="name" placeholder="Например, Азиза Каримова">
+        </div>
+
+        <div class="rsvp-toggle" id="rsvpToggle" role="group" aria-label="Придёте ли вы">
+          <button type="button" class="active" data-value="yes" aria-pressed="true">Буду</button>
+          <button type="button" data-value="no" aria-pressed="false">Не смогу</button>
+        </div>
+
+        <div class="rsvp-field rsvp-guests" id="rsvpGuests">
+          <span class="rsvp-label" id="rsvpCountLabel">Сколько вас будет</span>
+          <div class="rsvp-count" role="group" aria-labelledby="rsvpCountLabel">
+            <button type="button" id="rsvpMinus" aria-label="Убрать одного гостя">−</button>
+            <span class="rsvp-count-value" id="rsvpCount" aria-live="polite">1 человек</span>
+            <button type="button" id="rsvpPlus" aria-label="Добавить гостя">+</button>
+          </div>
+        </div>
+
+        <div class="rsvp-field">
+          <label class="rsvp-label" for="rsvpNote">Пожелание или что-то важное (по желанию)</label>
+          <textarea id="rsvpNote" class="rsvp-note" placeholder="Например: не ем мясо, приедем к 19:00"></textarea>
+        </div>
+
+        <button type="button" class="rsvp-submit" id="rsvpSubmit">Отправить в WhatsApp</button>
+        <div class="rsvp-alts">
+          <a class="rsvp-alt" id="rsvpTelegram" href="#" target="_blank" rel="noopener">Отправить в Telegram</a>
+        </div>
+        <p class="rsvp-hint" id="rsvpHint"></p>
+        <p class="rsvp-error" id="rsvpError" role="alert"></p>
+      </div>
+
+      <p class="rsvp-thanks" id="rsvpThanks"></p>
+    </div>
+    <footer>Mirjamol &amp; Sipora · 23 . 09 . 2026</footer>
+  </section>
+
+<script>
+  // ---------- ПАУЗА АНИМАЦИЙ ВНЕ ЭКРАНА + ПОЯВЛЕНИЕ КАРТОЧЕК ----------
+  (function(){
+    var bands = Array.prototype.slice.call(document.querySelectorAll('.band'));
+    // сразу активируем первую секцию, чтобы буквы/цветы не ждали observer
+    if (bands[0]) bands[0].classList.add('active-band');
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          entry.target.classList.toggle('active-band', entry.isIntersecting);
+          if (entry.isIntersecting){
+            entry.target.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in-view'); });
+          }
+        });
+      }, { threshold: 0.18 });
+      bands.forEach(function(b){ io.observe(b); });
+    } else {
+      bands.forEach(function(b){
+        b.classList.add('active-band');
+        b.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in-view'); });
+      });
+    }
+    // аварийная подстраховка: если через 2с что-то не активировалось — включаем всё
+    setTimeout(function(){
+      bands.forEach(function(b){ b.classList.add('active-band'); });
+    }, 2000);
+  })();
+
+  // ---------- АНИМИРОВАННОЕ ПОЯВЛЕНИЕ ИМЁН ПО БУКВАМ ----------
+  (function(){
+    function renderLetters(el, text, startDelay){
+      var frag = document.createDocumentFragment();
+      text.split('').forEach(function(ch, i){
+        var span = document.createElement('span');
+        span.className = 'letter';
+        span.textContent = ch === ' ' ? '\u00A0' : ch;
+        span.style.animationDelay = (startDelay + i * 0.045) + 's';
+        frag.appendChild(span);
+      });
+      el.appendChild(frag);
+    }
+    renderLetters(document.getElementById('name1'), 'Mirjamol', 0.15);
+    renderLetters(document.getElementById('name2'), 'Sipora', 0.75);
+  })();
+
+  // ---------- ТАЙМЕР ДО СВАДЬБЫ ----------
+  (function(){
+    var weddingDate = new Date(Date.UTC(2026, 8, 23, 13, 0, 0));
+    var els = {
+      days: document.getElementById('cd-days'),
+      hours: document.getElementById('cd-hours'),
+      minutes: document.getElementById('cd-minutes'),
+      seconds: document.getElementById('cd-seconds')
+    };
+    var label = document.querySelector('.cd-label');
+    function pad(n){ n = String(n); return n.length < 2 ? '0' + n : n; }
+    var prev = {};
+    function tick(){
+      var now = new Date();
+      var diff = weddingDate.getTime() - now.getTime();
+      if (diff <= 0){
+        if (label) label.textContent = 'мы уже женаты!';
+        els.days.textContent = els.hours.textContent = els.minutes.textContent = els.seconds.textContent = '00';
+        clearInterval(timer);
+        return;
+      }
+      var totalSeconds = Math.floor(diff / 1000);
+      var vals = {
+        days: Math.floor(totalSeconds / 86400),
+        hours: Math.floor((totalSeconds % 86400) / 3600),
+        minutes: Math.floor((totalSeconds % 3600) / 60),
+        seconds: totalSeconds % 60
+      };
+      Object.keys(vals).forEach(function(key){
+        var text = pad(vals[key]);
+        if (prev[key] !== text){
+          els[key].textContent = text;
+          els[key].classList.remove('pulse');
+          void els[key].offsetWidth;
+          els[key].classList.add('pulse');
+          prev[key] = text;
+        }
+      });
+    }
+    tick();
+    var timer = setInterval(tick, 1000);
+  })();
+
+  // ---------- RSVP ----------
+  (function(){
+    // ЗАПОЛНИТЬ: куда приходят ответы гостей
+    var CONTACT = {
+      whatsapp: '998933305664',
+      telegram: 'rabbimov_m'
+    };
+
+    var card    = document.getElementById('rsvpCard');
+    var nameEl  = document.getElementById('rsvpName');
+    var noteEl  = document.getElementById('rsvpNote');
+    var guests  = document.getElementById('rsvpGuests');
+    var countEl = document.getElementById('rsvpCount');
+    var minusEl = document.getElementById('rsvpMinus');
+    var plusEl  = document.getElementById('rsvpPlus');
+    var errorEl = document.getElementById('rsvpError');
+    var thanksEl= document.getElementById('rsvpThanks');
+    var tgEl    = document.getElementById('rsvpTelegram');
+    var hintEl  = document.getElementById('rsvpHint');
+    var buttons = document.querySelectorAll('#rsvpToggle button');
+
+    hintEl.textContent = 'В Telegram выберите чат @' + CONTACT.telegram;
+
+    var selected = 'yes';
+    var count = 1;
+
+    function plural(n){
+      var n10 = n % 10, n100 = n % 100;
+      if (n10 === 1 && n100 !== 11) return 'человек';
+      if (n10 >= 2 && n10 <= 4 && (n100 < 10 || n100 >= 20)) return 'человека';
+      return 'человек';
+    }
+    function renderCount(){
+      countEl.textContent = count + ' ' + plural(count);
+      minusEl.disabled = count <= 1;
+      plusEl.disabled  = count >= 10;
+    }
+    minusEl.addEventListener('click', function(){ if (count > 1){ count--; renderCount(); } });
+    plusEl.addEventListener('click',  function(){ if (count < 10){ count++; renderCount(); } });
+    renderCount();
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        selected = btn.dataset.value;
+        guests.hidden = (selected === 'no');   // «не смогу» — счётчик гостей не нужен
+      });
+    });
+
+    function buildMessage(name){
+      var lines = ['Ответ на приглашение — Mirjamol & Sipora, 23.09.2026', '', 'Имя: ' + name];
+      if (selected === 'yes'){
+        lines.push('Придём: да');
+        lines.push('Гостей: ' + count);
+      } else {
+        lines.push('Придём: к сожалению, нет');
+      }
+      var note = noteEl.value.trim();
+      if (note) lines.push('Комментарий: ' + note);
+      return lines.join('\n');
+    }
+
+    function showError(text){
+      errorEl.textContent = text;
+      errorEl.style.display = 'block';
+    }
+
+    function done(){
+      thanksEl.textContent = selected === 'yes'
+        ? 'Спасибо! Ждём вас 23 сентября 🤍'
+        : 'Спасибо, что дали знать. Будем скучать 🤍';
+      thanksEl.style.display = 'block';
+      card.classList.add('sent');
+    }
+
+    // общая проверка перед отправкой в любой канал
+    function validName(){
+      var name = nameEl.value.trim();
+      if (name.length < 2){
+        nameEl.classList.add('invalid');
+        showError('Напишите, пожалуйста, имя — иначе мы не поймём, от кого ответ.');
+        nameEl.focus();
+        return null;
+      }
+      nameEl.classList.remove('invalid');
+      errorEl.style.display = 'none';
+      return name;
+    }
+
+    document.getElementById('rsvpSubmit').addEventListener('click', function(){
+      var name = validName();
+      if (!name) return;
+      window.open('https://wa.me/' + CONTACT.whatsapp + '?text=' + encodeURIComponent(buildMessage(name)), '_blank', 'noopener');
+      done();
+    });
+
+    tgEl.addEventListener('click', function(e){
+      e.preventDefault();
+      var name = validName();
+      if (!name) return;
+      // Telegram не даёт подставить текст сразу в личный чат, но экран «Поделиться»
+      // открывается с уже вписанным сообщением — гостю остаётся выбрать чат и нажать «Отправить»
+      window.open('https://t.me/share/url?url=&text=' + encodeURIComponent(buildMessage(name)), '_blank', 'noopener');
+      done();
+    });
+  })();
+</script>
+
+</body>
+</html>
