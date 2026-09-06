@@ -66,9 +66,15 @@
     display:flex; flex-direction:column; align-items:center; text-align:center;
   }
   .band.hero-band{ min-height:100svh; justify-content:flex-start; padding-top:90px; }
+  #band0{ padding-top:56px; }
+  /* на невысоких экранах иллюстрация ещё компактнее, чтобы не доставать до даты */
+  @media (max-height:700px){
+    #band0{ padding-top:40px; }
+    .hero-illustration{ height:30vh; height:30svh; }
+  }
   .hero-illustration{
     position:absolute; bottom:0; left:50%; transform:translateX(-46%);
-    width:auto; height:44vh; height:44svh; max-height:400px; max-width:88%; object-fit:contain;
+    width:auto; height:37vh; height:37svh; max-height:330px; max-width:80%; object-fit:contain;
     opacity:.92; pointer-events:none; z-index:0;
   }
   /* мягкая подложка под текстом: даже если иллюстрация подойдёт вплотную, имена читаются */
@@ -144,8 +150,8 @@
 
   /* ---------- HERO / NAMES ---------- */
   .eyebrow{
-    font-size:12.5px; letter-spacing:.4em; text-transform:uppercase; color:var(--gold-soft);
-    margin:0 0 26px; opacity:0; animation:fadeUp .9s ease .1s forwards;
+    font-size:13.5px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold-deep);
+    font-weight:500; margin:0 0 26px; opacity:0; animation:fadeUp .9s ease .1s forwards;
   }
   .names{ font-family:'Playfair Display', serif; font-weight:600; font-size:clamp(44px,12.5vw,64px); line-height:1.05; margin:0; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.25em; }
   .names .letter, .cover-mono .letter{
@@ -181,7 +187,7 @@
 
   /* ---------- CALENDAR ---------- */
   .calendar-card{ width:100%; max-width:340px; margin:0 auto; padding:26px 22px 24px; }
-  .cal-month{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:19px; color:var(--gold-soft); margin:0 0 16px; }
+  .cal-month{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:19px; color:var(--gold-deep); margin:0 0 16px; }
   .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px 0; }
   .cal-dow{ font-size:10.5px; letter-spacing:.05em; color:var(--ink-soft); opacity:.7; padding-bottom:6px; }
   .cal-day{ position:relative; height:34px; display:flex; align-items:center; justify-content:center; font-size:14px; color:var(--ink); }
@@ -204,9 +210,9 @@
   .cal-day.highlight span{ position:relative; z-index:2; }
   @keyframes bezelSpin{ to{ transform:rotate(360deg); } }
   @keyframes pulseRing{
-    0%{ box-shadow:0 0 0 0 rgba(0,0,0,.18); }
-    70%{ box-shadow:0 0 0 10px rgba(0,0,0,0); }
-    100%{ box-shadow:0 0 0 0 rgba(0,0,0,0); }
+    0%{ box-shadow:0 0 0 0 rgba(110,125,76,.30); }
+    70%{ box-shadow:0 0 0 10px rgba(110,125,76,0); }
+    100%{ box-shadow:0 0 0 0 rgba(110,125,76,0); }
   }
   .cal-caption{ margin:16px 0 0; font-size:12.5px; letter-spacing:.05em; color:var(--ink-soft); }
 
@@ -216,7 +222,7 @@
   .cd-grid{ display:flex; justify-content:center; gap:10px; }
   .cd-unit{ display:flex; flex-direction:column; align-items:center; width:64px; }
   .cd-box{ width:100%; padding:10px 0; border-radius:12px; background:var(--surface); border:1px solid var(--glass-line); }
-  .cd-num{ font-family:'Cormorant Garamond', serif; font-weight:600; font-size:28px; line-height:1; color:var(--gold-soft); font-variant-numeric:tabular-nums; display:inline-block; }
+  .cd-num{ font-family:'Cormorant Garamond', serif; font-weight:600; font-size:28px; line-height:1; color:var(--gold-deep); font-variant-numeric:tabular-nums; display:inline-block; }
   .cd-num.pulse{ animation:pop .4s ease; }
   @keyframes pop{ 0%{ transform:scale(1); } 40%{ transform:scale(1.28); } 100%{ transform:scale(1); } }
   .cd-unit-label{ margin-top:8px; font-size:10px; letter-spacing:.06em; color:var(--ink-soft); }
@@ -244,7 +250,7 @@
   }
   .rsvp-toggle button.active[data-value="yes"]{ background:linear-gradient(135deg, var(--gold-soft), var(--gold)); color:#170D06; border-color:var(--gold); font-weight:500; }
   /* на тёмном фоне прежний тёмно-бордовый текст был нечитаем */
-  .rsvp-toggle button.active[data-value="no"]{ background:rgba(194,160,160,.22); border-color:var(--blush); color:#F1DCDC; font-weight:500; }
+  .rsvp-toggle button.active[data-value="no"]{ background:rgba(194,160,160,.25); border-color:var(--blush); color:#8A4B4B; font-weight:500; }
 
   /* счётчик гостей */
   .rsvp-count{ display:flex; align-items:center; justify-content:space-between; gap:12px;
@@ -284,7 +290,7 @@
   .rsvp-alt:hover{ border-color:var(--gold); color:var(--ink); }
   .rsvp-hint{ margin:10px 0 0; font-size:12px; line-height:1.5; color:var(--ink-soft); opacity:.8; }
   .rsvp-error{ display:none; margin:12px 0 0; font-size:13px; color:var(--blush); }
-  .rsvp-thanks{ display:none; margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:17px; color:var(--gold-soft); line-height:1.5; }
+  .rsvp-thanks{ display:none; margin:16px 0 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:17px; color:var(--gold-deep); line-height:1.5; }
   .rsvp-card.sent .rsvp-form{ display:none; }
 
   /* видимый фокус с клавиатуры по всей странице */
@@ -353,7 +359,7 @@
   .child-photo:nth-child(2){ transform:rotate(3deg); }
   .child-photo span{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 8px; font-size:11px; color:var(--ink-soft); font-style:italic; }
 
-  footer{ margin-top:6px; font-size:11.5px; letter-spacing:.08em; color:var(--ink-soft); opacity:.8; }
+  footer{ margin-top:24px; font-size:11.5px; letter-spacing:.08em; color:var(--ink-soft); opacity:.8; }
 </style>
 </head>
 <body>
@@ -380,7 +386,7 @@
 
   <!-- СЕКЦИЯ 0 — ОБЛОЖКА С МОНОГРАММОЙ -->
   <section class="band hero-band active-band" id="band-cover"
-    style="--bg1:#F6F8F0; --bg2:#E9EEDC; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    style="--bg1:#FDFEFA; --bg2:#EFF3E4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.72); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
     <img class="corner-flower corner-flower-tl" alt="" src="img/corner-flower.webp" width="620" height="425">
     <img class="corner-flower corner-flower-tr" alt="" src="img/corner-flower.webp" width="620" height="425">
     <img class="corner-flower corner-flower-bl" alt="" src="img/corner-flower.webp" width="620" height="425">
@@ -397,7 +403,7 @@
 
   <!-- СЕКЦИЯ 1 — ИМЕНА (блаш) -->
   <section class="band hero-band" id="band0"
-    style="--bg1:#FBFCF7; --bg2:#F0F3E6; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    style="--bg1:#FDFEFA; --bg2:#EFF3E4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.72); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
     <svg class="band-sketch tl"><use href="#sketch"/></svg>
     <svg class="band-sketch tr"><use href="#sketch"/></svg>
 
@@ -425,7 +431,7 @@
 
   <!-- СЕКЦИЯ 2 — ФОТОСЕССИЯ (шалфей) -->
   <section class="band" id="band1"
-    style="--bg1:#F4F6F0; --bg2:#E3E9D6; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    style="--bg1:#FDFEFA; --bg2:#EFF3E4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.72); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
     <svg class="band-sketch tl"><use href="#sketch"/></svg>
     <svg class="band-sketch br"><use href="#sketch"/></svg>
     <section class="photo-page reveal">
@@ -443,7 +449,7 @@
 
   <!-- СЕКЦИЯ 3 — КАЛЕНДАРЬ + ТАЙМЕР (шампань) -->
   <section class="band" id="band2"
-    style="--bg1:#232B1C; --bg2:#141A0F; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#EDF1E2; --ink-soft:#A9B598; --glass:rgba(255,255,255,0.06); --glass-line:rgba(156,171,116,0.35); --surface:rgba(255,255,255,0.05);">
+    style="--bg1:#FDFEFA; --bg2:#EFF3E4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.72); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
     <svg class="band-sketch tr"><use href="#sketch"/></svg>
     <svg class="band-sketch bl"><use href="#sketch"/></svg>
     <p class="eyebrow">когда</p>
@@ -484,7 +490,7 @@
 
   <!-- СЕКЦИЯ 3.5 — МЕСТО -->
   <section class="band" id="band-venue"
-    style="--bg1:#FBFCF7; --bg2:#EDF1E2; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    style="--bg1:#FDFEFA; --bg2:#EFF3E4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.72); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
     <svg class="band-sketch tl"><use href="#sketch"/></svg>
     <svg class="band-sketch br"><use href="#sketch"/></svg>
     <p class="eyebrow">где</p>
@@ -510,7 +516,7 @@
 
   <!-- СЕКЦИЯ 4 — ДЕТСКИЕ ФОТО (лаванда) -->
   <section class="band" id="band3"
-    style="--bg1:#F6F8EE; --bg2:#DCE4C4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.7); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
+    style="--bg1:#FDFEFA; --bg2:#EFF3E4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.72); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
     <svg class="band-sketch tl"><use href="#sketch"/></svg>
     <svg class="band-sketch br"><use href="#sketch"/></svg>
     <p class="eyebrow">до того, как всё началось</p>
@@ -527,7 +533,7 @@
 
   <!-- СЕКЦИЯ 5 — RSVP (терракота) -->
   <section class="band" id="band4"
-    style="--bg1:#161C10; --bg2:#0A0D07; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#EDF1E2; --ink-soft:#A9B598; --glass:rgba(255,255,255,0.05); --glass-line:rgba(156,171,116,0.35); --surface:rgba(255,255,255,0.05);">
+    style="--bg1:#FDFEFA; --bg2:#EFF3E4; --gold:#9CAB74; --gold-soft:#C3D19E; --gold-deep:#6E7D4C; --blush:#C2A0A0; --ink:#3F4536; --ink-soft:#818C74; --glass:rgba(255,255,255,0.72); --glass-line:rgba(156,171,116,0.35); --surface:rgba(0,0,0,0.03);">
     <svg class="band-sketch tr"><use href="#sketch"/></svg>
     <svg class="band-sketch bl"><use href="#sketch"/></svg>
     <p class="eyebrow">ваш ответ</p>
