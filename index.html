@@ -46,6 +46,8 @@
     --surface:rgba(0,0,0,0.03);
   }
   *{box-sizing:border-box;}
+  /* высота считается от ширины, а не берётся из атрибута height */
+  img{ max-width:100%; height:auto; }
   html{scroll-behavior:smooth;}
   body{
     margin:0; color:var(--ink); font-family:'Inter', sans-serif; font-weight:300;
@@ -66,9 +68,23 @@
   .band.hero-band{ min-height:100svh; justify-content:flex-start; padding-top:90px; }
   .hero-illustration{
     position:absolute; bottom:0; left:50%; transform:translateX(-46%);
-    width:88%; max-width:360px; opacity:.92; pointer-events:none; z-index:0;
+    width:auto; height:44vh; height:44svh; max-height:400px; max-width:88%; object-fit:contain;
+    opacity:.92; pointer-events:none; z-index:0;
   }
-  .hero-text{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; }
+  /* мягкая подложка под текстом: даже если иллюстрация подойдёт вплотную, имена читаются */
+  .hero-text{
+    position:relative; z-index:1; display:flex; flex-direction:column; align-items:center;
+    padding:14px 18px 22px;
+  }
+  /* размытая подложка шире самого текста — её края уходят за пределы видимого,
+     поэтому границы прямоугольника не видно, а имена читаются поверх иллюстрации */
+  .hero-text::before{
+    content:""; position:absolute; z-index:-1;
+    left:-30%; right:-30%; top:-14%; bottom:-22%;
+    background:radial-gradient(ellipse at 50% 46%,
+      rgba(251,252,247,.95) 0%, rgba(251,252,247,.82) 34%, rgba(251,252,247,.35) 55%, rgba(251,252,247,0) 72%);
+    pointer-events:none;
+  }
 
   /* ---------- СЕКЦИЯ-ОБЛОЖКА: МОНОГРАММА С ЦВЕТАМИ ---------- */
   .cover-wrap{ position:relative; width:min(92vw,380px); height:min(92vw,420px); margin:0 auto; }
@@ -77,7 +93,7 @@
     width:74%; aspect-ratio:1/1; border-radius:50%;
     border:1.5px solid var(--gold);
     display:flex; align-items:center; justify-content:center;
-    background:rgba(255,255,255,0.35);
+    background:rgba(255,255,255,0.72);
     z-index:2;
   }
   .cover-ring::before{
@@ -93,10 +109,11 @@
     font-size:.55em; color:#B98B3E; padding:0 .08em; vertical-align:middle;
   }
   .cover-flower{ position:absolute; pointer-events:none; z-index:3; opacity:0; animation:flowerFade 1.3s ease 1.3s forwards; }
-  .cover-flower.f-top{ width:60%; top:-8%; left:50%; transform:translateX(-50%) rotate(-3deg); }
+  .cover-flower.f-top{ width:50%; top:-10%; left:50%; transform:translateX(-50%) rotate(-3deg); }
   .cover-flower.f-left{ width:52%; bottom:0%; left:-16%; transform:rotate(6deg); }
   .cover-flower.f-right{ width:48%; bottom:-4%; right:-16%; transform:scaleX(-1) rotate(-4deg); }
   .cover-sub{
+    position:relative; z-index:5;
     margin-top:34px; font-size:13px; letter-spacing:.32em; text-transform:uppercase;
     color:var(--ink-soft); opacity:0; animation:fadeUp .9s ease .3s forwards;
   }
